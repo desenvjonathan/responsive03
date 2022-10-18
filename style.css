@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --ff-heading: 'Staatliches', cursive;
+  --ff-texting: 'Palanquin', sans-serif;
+  --ff-media: 'Roboto', sans-serif;
+  --fs-heading: 4rem;
+  --fs-heading-sm: 2rem;
+  --fs-texting: 2rem;
+  --hue: 270;
+  --bg-header: hsl(var(--hue), 17%, 62%);
+  --bg-header-h1: hsl(var(--hue), 18%, 79%);
+  --bg-card-h2: hsl(var(--hue), 91%, 96%);
+  --bg-body: hsl(var(--hue), 100%, 97%);
+  --fc-heading: hsl(var(--hue), 0%, 100%);
+  --fc-texting: hsl(var(--hue), 84%, 12%);
+  --fc-heading-sm: hsl(var(--hue), 17%, 35%);
+  --fc-footer-hover: hsl(var(--hue), 52%, 67%);
+}
+
+body{
+  background-color: var(--bg-body);
+}
+
+.page {
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+header {
+  background-color: var(--bg-header);
+  display: flex;
+  flex-direction: column;
+}
+
+header img {
+  width: 13.7rem;
+  height: 13.7rem;
+  margin: 3.2rem auto;
+}
+
+header h1 {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-heading);
+  line-height: 3.4rem;
+  letter-spacing: 2px;
+  color: var(--fc-heading);
+  background-color: var(--bg-header-h1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4.9rem;
+}
+
+main {
+  display: grid;
+  margin: 0 auto;
+  width: 90%;
+}
+
+main p {
+  max-width: 30.5rem;
+  font-family: var(--ff-texting);
+  font-size: var(--fs-texting);
+  line-height: 1.5rem;
+  color: var(--fc-texting);
+  padding: 1.4rem 0 0;
+  margin: auto;
+  text-align: center;
+}
+
+.card-wrapper {
+  margin-top: 6.3rem;
+  margin-bottom: 6.0rem;
+  display: grid;
+  gap: 3.2rem;
+}
+
+.card {
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  filter: brightness(0.65);
+  border-radius: 2rem;
+  margin: 0 auto;
+  transition: all 0.2s;
+  animation-name: topdown;
+  animation-duration: 2s;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+  filter: brightness(1);
+}
+
+.card h2 {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  height: 3.5rem;
+  font-family: var(--ff-heading);
+  font-size: var(--fs-heading-sm);
+  line-height: 3.4rem;
+  letter-spacing: 2px;
+  color: var(--fc-heading-sm);
+  border-radius: 2rem;
+  background-color: var(--bg-card-h2);
+  padding: 0px 2.4rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer {
+  display: none; 
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+  color: var(--fc-heading-sm);
+  padding-bottom: 5rem;
+}
+.footer a {
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+  color: var(--fc-heading-sm);
+}
+
+.footer a:hover {
+  color: var(--fc-footer-hover);
+}
+
+@media (min-width: 700px) and (max-width: 1200px) {
+  body {
+    display: flex;
+  }
+
+  main p {
+    display: none;
+  }
+
+  header img {
+    width: 25rem;
+    height: 25rem;
+  }
+
+  header h1 {
+    font-size: clamp(3rem, 0.5rem + 3vw , 4.8rem);
+    min-height: 7rem;
+  }
+
+  header::after {
+    content: "Se o calor aumentou, o nosso sorvete chegou! Aqui na Space Cream trabalhamos com mais de 30 sabores deliciosos para você se refrescar! Além disso, temos 20 complementos para deixar o que já é gostoso, melhor ainda. Estamos abertos todos os dias, venha nos fazer uma visita!";
+    color: var(--fc-heading);
+    font-family: var(--ff-media);
+    font-size: clamp(2rem, 1.4vw, 2.4rem);
+    line-height: 3.0rem;
+    display: block;
+    margin: 0 auto;
+    max-width: 40.5rem;
+    padding-top: 5rem;
+    width: 80%;
+  }
+
+  .footer {
+    display: inline;
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    display: flex;
+  }
+
+  .page {
+    padding: 0 3.2rem;
+  }
+
+  header {
+    width: 40%;
+  }
+
+  main p {
+    display: none;
+  }
+
+  header::after {
+    content: "Se o calor aumentou, o nosso sorvete chegou! Aqui na Space Cream trabalhamos com mais de 30 sabores deliciosos para você se refrescar! Além disso, temos 20 complementos para deixar o que já é gostoso, melhor ainda. Estamos abertos todos os dias, venha nos fazer uma visita!";
+    color: var(--fc-heading);
+    font-family: var(--ff-media);
+    font-size: clamp(2rem, 1.4vw, 2.4rem);
+    line-height: 3.0rem;
+    display: block;
+    margin: 0 auto;
+    max-width: 40.5rem;
+    padding-top: 5rem;
+    width: 80%;
+  }
+
+  .card-wrapper {
+    grid-template-areas: 
+    "A C E"
+    "B C F"
+    "B D F"
+    ;
+    }  
+    .card-wrapper div:nth-child(1) {
+      grid-area: A;
+      animation-name: topdown;
+      animation-duration: 1s;
+   }
+   .card-wrapper div:nth-child(2) {
+      grid-area: B;
+      animation-name: downtop;
+      animation-duration: 2s;
+      animation-direction: reverse;
+      animation-fill-mode: backwards;
+   }
+   .card-wrapper div:nth-child(3) {
+      grid-area: C;
+      animation-name: topdown;
+      animation-duration: 4s;  
+   }
+   .card-wrapper div:nth-child(4) {
+      grid-area: D;   
+      animation-name: downtop;
+      animation-duration: 4s;
+      animation-direction: reverse;
+      animation-fill-mode: backwards; 
+   }
+   .card-wrapper div:nth-child(5) {
+      grid-area: E;   
+      animation-name: topdown;
+      animation-duration: 7s;    
+   }
+   .card-wrapper div:nth-child(6) {
+      grid-area: F;
+      animation-name: downtop;
+      animation-duration: 4.3s;
+      animation-direction: reverse;
+      animation-fill-mode: backwards;       
+   }
+
+  .card h2 {
+    display: none;
+  }
+
+  .footer {
+    display: inline;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+  100% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
